@@ -1,4 +1,4 @@
-# Install script for directory: D:/program/clion/code/data-structure/10.4
+# Install script for directory: D:/program/clion/github_code/Data_struct/10.4
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/program/clion/code/data-structure/10.4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/program/clion/github_code/Data_struct/10.4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

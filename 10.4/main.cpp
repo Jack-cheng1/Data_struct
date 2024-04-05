@@ -7,7 +7,7 @@ typedef struct {
 }Sqlist;
 void inputList(Sqlist &L)
 {
-    for(int i =0;i<L.length;i++)
+    for(int i =1;i<L.length;i++)
     {
         scanf("%d",&L.data[i]);
     }
@@ -35,12 +35,25 @@ void printList(Sqlist L)
     {
         printf("%d ",L.data[i]);
     }
+    printf("\n");
+}
+//按值查找位置函数
+int LocateElem(Sqlist L,ElemType element)
+{
+    for(int i=0;i<L.length;i++)
+    {
+        if(element == L.data[i])
+        {
+            return i+1;
+        }
+    }
 }
 int main()
 {
     Sqlist L;
     bool ret;
     scanf("%d",&L.length);
+    L.data[0]=45;//初始化第一个值
     inputList(L);
     ElemType del=-1;
     ret = DeleteList(L,2,del);
@@ -53,5 +66,9 @@ int main()
     {
         printf("delete Sqlist failed!\n");
     }
+    //按值查找
+    int a;//用于接收查找位置的值
+    a = LocateElem(L,45);
+    printf("%d",a);//输出查找的结果
     return 0;
 }
