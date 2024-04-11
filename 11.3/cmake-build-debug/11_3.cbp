@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/program/clion/github_code/Data_struct/11.3/Exercise.cpp">
+			<Option target="11_3"/>
+		</Unit>
 		<Unit filename="D:/program/clion/github_code/Data_struct/11.3/main.cpp">
 			<Option target="11_3"/>
 		</Unit>

@@ -141,6 +141,33 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\11_3.dir\build.make CMakeFiles/11_3.dir/build
 .PHONY : 11_3/fast
 
+Exercise.obj: Exercise.cpp.obj
+
+.PHONY : Exercise.obj
+
+# target to build an object file
+Exercise.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\11_3.dir\build.make CMakeFiles/11_3.dir/Exercise.cpp.obj
+.PHONY : Exercise.cpp.obj
+
+Exercise.i: Exercise.cpp.i
+
+.PHONY : Exercise.i
+
+# target to preprocess a source file
+Exercise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\11_3.dir\build.make CMakeFiles/11_3.dir/Exercise.cpp.i
+.PHONY : Exercise.cpp.i
+
+Exercise.s: Exercise.cpp.s
+
+.PHONY : Exercise.s
+
+# target to generate assembly for a file
+Exercise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\11_3.dir\build.make CMakeFiles/11_3.dir/Exercise.cpp.s
+.PHONY : Exercise.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -177,6 +204,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... 11_3
+	@echo ... Exercise.obj
+	@echo ... Exercise.i
+	@echo ... Exercise.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
