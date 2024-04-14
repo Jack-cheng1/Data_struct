@@ -41,20 +41,63 @@ void List_tail_insert(LinkList &L)
     }
     r->next=NULL;//最后一个元素指向空
 }
+//按位查找
+LinkList GetElem(LinkList L,int SearchPos)
+{
+    int i =0;
+    if(SearchPos<0)//如果查找的位置为复数返回null
+    {
+        return NULL;
+    }
+    while (L!=NULL&&i<SearchPos){
+        L=L->next;
+        i++;
+    }
+    return L;//返回当前L所指的位置
+}
+//按值查找
+LinkList LocateElem(LinkList L,ElemType element)
+{
+    while (L->next!=NULL)
+    {
+
+        if(L->data == element)
+        {
+            return L;
+        }
+        L=L->next;
+    }
+    return NULL;
+}
 void print_List(LinkList L)
 {
     L=L->next;
     while (L!=NULL)
     {
-        printf("%3d",L->data);
+        printf("%3d ",L->data);
         L=L->next;
     }
+    printf("\n");
 }
 int main()
 {
     LinkList L;
-//    List_head_insert(L);
-    List_tail_insert(L);
-    print_List(L);
+//    List_head_insert(L);//头插法
+    LinkList search1,search2;//接收查找返回的指针
+    List_tail_insert(L);//尾插法
+//    search1=GetElem(L,5);//按位查找
+    search2 = LocateElem(L,24);//按值查找
+    print_List(L);//打印插入后的链表
+//    if(search1 !=NULL)
+//    {
+//        printf("Succeeded in searching by serial number\n");
+//        printf("%d\n",search1->data);
+//    }
+    if(search2 !=NULL)
+    {
+        printf("Search by value succeeded\n");
+        printf("%d",search2->data);
+    }
+
     return 0;
 }
