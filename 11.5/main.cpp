@@ -45,7 +45,7 @@ void List_tail_insert(LinkList &L)
 LinkList GetElem(LinkList L,int SearchPos)
 {
     int i =0;
-    if(SearchPos<0)//如果查找的位置为复数返回null
+    if(SearchPos<0)//如果查找的位置为负数返回null
     {
         return NULL;
     }
@@ -79,13 +79,27 @@ void print_List(LinkList L)
     }
     printf("\n");
 }
+//往第i个位置插入元素
+bool ListFrontInsert(LinkList L,int i,ElemType InsertVal)
+{
+    LinkList p= GetElem(L,i-1);//调用查找函数
+    if(p==NULL)//如果插入的位置为负数返回false;
+    {
+        return false;
+    }
+    LinkList q=(LinkList)malloc(sizeof(LNode));//申请结点空间
+    q->data=InsertVal;
+    q->next=p->next;
+    p->next=q;
+    return true;
+}
 int main()
 {
     LinkList L;
 //    List_head_insert(L);//头插法
     LinkList search1,search2;//接收查找返回的指针
     List_tail_insert(L);//尾插法
-//    search1=GetElem(L,5);//按位查找
+//    search1=GetElem(L,5);//按位查找（查找第5个位置）
     search2 = LocateElem(L,24);//按值查找
     print_List(L);//打印插入后的链表
 //    if(search1 !=NULL)
@@ -98,6 +112,14 @@ int main()
         printf("Search by value succeeded\n");
         printf("%d",search2->data);
     }
-
+    bool ret;//接收按位插入的返回值
+    ret = ListFrontInsert(L,3,99);//在第3个位置插入99
+    if(ret)
+    {
+        printf("Succeeded !\n");
+        print_List(L);
+    }else{
+        printf("fail!\n");
+    }
     return 0;
 }
